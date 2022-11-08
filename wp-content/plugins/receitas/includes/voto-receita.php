@@ -39,6 +39,12 @@ function br_voto_receita(){
 
     update_post_meta($post_id, 'receita_data', $receita_data);
 
+    //executar uma action especifica..
+    do_action('receita_voto', array(
+        'post_id'=>$post_id,
+        'voto'=>$voto
+    ));
+
     $array['status'] = 1;
 
     wp_send_json($array);

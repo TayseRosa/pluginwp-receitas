@@ -28,6 +28,7 @@ include('includes/widgets/receita_diaria.php');
 include('includes/cron.php');
 include('includes/deactivate.php');
 include('includes/shortcodes/receitas-criador.php');
+include('includes/receita-auth.php');
 include('includes/receita-submit.php');
 
  //Hooks
@@ -51,3 +52,4 @@ add_action('wp_ajax_nopriv_br_receitas_submit', 'br_receitas_submit');
 
  //Shortcodes
  add_shortcode('receitas_criador', 'br_receitas_criador_shortcode');
+ add_shortcode('receitas_auth_form', 'br_receitas_auth_form_shortcode');
