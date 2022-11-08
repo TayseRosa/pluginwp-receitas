@@ -26,6 +26,9 @@ function br_filter_receita_content( $content ){
     $receita_html = str_replace('UTENSILIOS_PH', $receita_data['utensilios'],$receita_html );
     $receita_html = str_replace('DIFICULDADE_PH', $receita_data['dificuldade'],$receita_html );
     $receita_html = str_replace('TIPO_PH', $receita_data['tipo'],$receita_html );
+    $receita_html = str_replace('RECEITA_ID_PH', $post->ID, $receita_html );
+    $receita_html = str_replace('NOTA_PH', $receita_data['media'],$receita_html );
+    $receita_html = str_replace('QT_PH', $receita_data['contagem'],$receita_html );
 
     return $receita_html.$content;
 }

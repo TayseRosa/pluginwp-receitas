@@ -1,10 +1,14 @@
 <?php
 include 'metabox_br_receita_opcoes.php';
 include 'enqueue.php';
+include 'columns.php';
 
 function br_receitas_admin_init(){
     add_action('add_meta_boxes_receita', 'br_receitas_metaboxes');
     add_action('admin_enqueue_scripts','br_admin_enqueue');
+    
+    add_filter('manage_receita_posts_columns', 'br_receita_columns');
+    add_action('manage_receita_posts_custom_column', 'br_manage_receita_columns', 10, 2 );
 }
 
 function br_receitas_metaboxes(){
